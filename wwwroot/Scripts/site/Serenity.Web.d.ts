@@ -476,14 +476,34 @@ declare namespace Serenity.Cinema {
         Storyline: TextAreaEditor;
         Year: IntegerEditor;
         ReleaseDate: DateEditor;
-        GenreId: LookupEditor;
         Kind: EnumEditor;
         Runtime: IntegerEditor;
+        GenreList: LookupEditor;
     }
     class MovieForm extends Serenity.PrefixedContext {
         static formKey: string;
         private static init;
         constructor(prefix: string);
+    }
+}
+declare namespace Serenity.Cinema {
+    interface MovieGenresRow {
+        MovieGenreId?: number;
+        MovieId?: number;
+        GenreId?: number;
+    }
+    namespace MovieGenresRow {
+        const idProperty = "MovieGenreId";
+        const localTextPrefix = "Cinema.MovieGenres";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            MovieGenreId = "MovieGenreId",
+            MovieId = "MovieId",
+            GenreId = "GenreId"
+        }
     }
 }
 declare namespace Serenity.Cinema {
@@ -496,8 +516,7 @@ declare namespace Serenity.Cinema {
         ReleaseDate?: string;
         Runtime?: number;
         Kind?: CinemaKind;
-        GenreId?: number;
-        GenreName?: string;
+        GenreList?: number[];
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -516,8 +535,7 @@ declare namespace Serenity.Cinema {
             ReleaseDate = "ReleaseDate",
             Runtime = "Runtime",
             Kind = "Kind",
-            GenreId = "GenreId",
-            GenreName = "GenreName"
+            GenreList = "GenreList"
         }
     }
 }
@@ -1020,6 +1038,11 @@ declare namespace Serenity.Cinema {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace Serenity.Cinema {
+    class GenreListFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext): string;
     }
 }
 declare namespace Serenity.Cinema {
