@@ -20,7 +20,8 @@ namespace Serenity.Cinema.Columns
         public string Storyline { get; set; }
         public int Year { get; set; }
         public DateTime ReleaseDate { get; set; }
-        [DisplayName("Runtime In Minutes"), Width(150), AlignRight]
+        public CinemaKind Kind { get; set; }
+        [DisplayName("Runtime In Minutes"), Width(150), AlignCenter]
         public int Runtime { get; set; }
     }
 }

@@ -63,6 +63,13 @@ namespace Serenity.Cinema
             set => fields.Runtime[this] = value;
         }
 
+        [DisplayName("Kind"), NotNull, DefaultValue(CinemaKind.Film)]
+        public CinemaKind? Kind
+        {
+            get => (CinemaKind?)fields.Kind[this];
+            set => fields.Kind[this] = (Int32?)value;
+        }
+
         public MovieRow()
             : base()
         {
@@ -82,6 +89,7 @@ namespace Serenity.Cinema
             public Int32Field Year;
             public DateTimeField ReleaseDate;
             public Int32Field Runtime;
+            public Int32Field Kind;
         }
     }
 }

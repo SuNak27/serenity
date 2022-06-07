@@ -405,6 +405,13 @@ declare namespace Serenity.Administration {
     }
 }
 declare namespace Serenity.Cinema {
+    enum CinemaKind {
+        Film = 1,
+        TvSeries = 2,
+        MiniSeries = 3
+    }
+}
+declare namespace Serenity.Cinema {
     class MovieColumns {
         static columnsKey: string;
     }
@@ -417,6 +424,7 @@ declare namespace Serenity.Cinema {
         Year: IntegerEditor;
         ReleaseDate: DateEditor;
         Runtime: IntegerEditor;
+        Kind: EnumEditor;
     }
     class MovieForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -433,6 +441,7 @@ declare namespace Serenity.Cinema {
         Year?: number;
         ReleaseDate?: string;
         Runtime?: number;
+        Kind?: CinemaKind;
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -449,7 +458,8 @@ declare namespace Serenity.Cinema {
             Storyline = "Storyline",
             Year = "Year",
             ReleaseDate = "ReleaseDate",
-            Runtime = "Runtime"
+            Runtime = "Runtime",
+            Kind = "Kind"
         }
     }
 }
