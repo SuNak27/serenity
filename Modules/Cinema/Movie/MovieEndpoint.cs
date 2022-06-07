@@ -44,13 +44,13 @@ namespace Serenity.Cinema.Endpoints
         }
 
         [HttpPost]
-        public ListResponse<MyRow> List(IDbConnection connection, ListRequest request,
+        public ListResponse<MyRow> List(IDbConnection connection, MovieListRequest request,
             [FromServices] IMovieListHandler handler)
         {
             return handler.List(connection, request);
         }
 
-        public FileContentResult ListExcel(IDbConnection connection, ListRequest request,
+        public FileContentResult ListExcel(IDbConnection connection, MovieListRequest request,
             [FromServices] IMovieListHandler handler,
             [FromServices] IExcelExporter exporter)
         {

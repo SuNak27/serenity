@@ -507,6 +507,11 @@ declare namespace Serenity.Cinema {
     }
 }
 declare namespace Serenity.Cinema {
+    interface MovieListRequest extends Serenity.ListRequest {
+        Genres?: number[];
+    }
+}
+declare namespace Serenity.Cinema {
     interface MovieRow {
         MovieId?: number;
         Title?: string;
@@ -546,7 +551,7 @@ declare namespace Serenity.Cinema {
         function Update(request: Serenity.SaveRequest<MovieRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MovieRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MovieRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: MovieListRequest, onSuccess?: (response: Serenity.ListResponse<MovieRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "Cinema/Movie/Create",
             Update = "Cinema/Movie/Update",
@@ -1068,6 +1073,7 @@ declare namespace Serenity.Cinema {
         protected getService(): string;
         constructor(container: JQuery);
         protected getQuickSearchFields(): Serenity.QuickSearchField[];
+        protected getQuickFilters(): QuickFilter<Widget<any>, any>[];
     }
 }
 declare namespace Serenity.LanguageList {

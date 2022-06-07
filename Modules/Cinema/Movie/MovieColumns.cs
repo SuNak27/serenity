@@ -21,7 +21,7 @@ namespace Serenity.Cinema.Columns
         public int Year { get; set; }
         public DateTime ReleaseDate { get; set; }
         public CinemaKind Kind { get; set; }
-        [Width(200), GenreListFormatter]
+        [Width(200), GenreListFormatter, QuickFilter]
         public List<Int32> GenreList { get; set; }
         [DisplayName("Runtime In Minutes"), Width(150), AlignCenter]
         public int Runtime { get; set; }
