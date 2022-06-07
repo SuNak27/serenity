@@ -19,7 +19,8 @@ namespace Serenity.Cinema.Forms
         public string Storyline { get; set; }
         public int Year { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public int Runtime { get; set; }
+        public Int32 GenreId { get; set; }
         public CinemaKind Kind { get; set; }
+        public int Runtime { get; set; }
     }
 }

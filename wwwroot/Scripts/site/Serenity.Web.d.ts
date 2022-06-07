@@ -412,6 +412,59 @@ declare namespace Serenity.Cinema {
     }
 }
 declare namespace Serenity.Cinema {
+    class GenreColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Serenity.Cinema {
+    interface GenreForm {
+        Name: StringEditor;
+    }
+    class GenreForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Serenity.Cinema {
+    interface GenreRow {
+        GenreId?: number;
+        Name?: string;
+    }
+    namespace GenreRow {
+        const idProperty = "GenreId";
+        const nameProperty = "Name";
+        const localTextPrefix = "Cinema.Genre";
+        const lookupKey = "Cinema.Genre";
+        function getLookup(): Q.Lookup<GenreRow>;
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            GenreId = "GenreId",
+            Name = "Name"
+        }
+    }
+}
+declare namespace Serenity.Cinema {
+    namespace GenreService {
+        const baseUrl = "Cinema/Genre";
+        function Create(request: Serenity.SaveRequest<GenreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GenreRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GenreRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GenreRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Cinema/Genre/Create",
+            Update = "Cinema/Genre/Update",
+            Delete = "Cinema/Genre/Delete",
+            Retrieve = "Cinema/Genre/Retrieve",
+            List = "Cinema/Genre/List"
+        }
+    }
+}
+declare namespace Serenity.Cinema {
     class MovieColumns {
         static columnsKey: string;
     }
@@ -423,8 +476,9 @@ declare namespace Serenity.Cinema {
         Storyline: TextAreaEditor;
         Year: IntegerEditor;
         ReleaseDate: DateEditor;
-        Runtime: IntegerEditor;
+        GenreId: LookupEditor;
         Kind: EnumEditor;
+        Runtime: IntegerEditor;
     }
     class MovieForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -442,6 +496,8 @@ declare namespace Serenity.Cinema {
         ReleaseDate?: string;
         Runtime?: number;
         Kind?: CinemaKind;
+        GenreId?: number;
+        GenreName?: string;
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -459,7 +515,9 @@ declare namespace Serenity.Cinema {
             Year = "Year",
             ReleaseDate = "ReleaseDate",
             Runtime = "Runtime",
-            Kind = "Kind"
+            Kind = "Kind",
+            GenreId = "GenreId",
+            GenreName = "GenreName"
         }
     }
 }
@@ -938,6 +996,30 @@ declare namespace Serenity.Administration {
     interface UserRoleDialogOptions {
         userID: number;
         username: string;
+    }
+}
+declare namespace Serenity.Cinema {
+    class GenreDialog extends Serenity.EntityDialog<GenreRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: GenreForm;
+    }
+}
+declare namespace Serenity.Cinema {
+    class GenreGrid extends Serenity.EntityGrid<GenreRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GenreDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace Serenity.Cinema {
