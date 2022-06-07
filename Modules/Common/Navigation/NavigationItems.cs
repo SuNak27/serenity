@@ -12,3 +12,5 @@ using MyPagesCinema = Serenity.Cinema.Pages;
 [assembly: NavigationMenu(3000, "Cinema", icon: "fa-ticket")]
 [assembly: NavigationLink(3100, "Cinema/Movie", typeof(MyPagesCinema.MovieController), icon: "fa-film")]
 [assembly: NavigationLink(4001, "Cinema/Genre", typeof(MyPagesCinema.GenreController), icon: "fa-bars")]
+[assembly: NavigationLink(4200, "Cinema/Person", typeof(MyPagesCinema.PersonController), icon: "fa-user")]
+[assembly: NavigationLink(4300, "Cinema/Moviecast", typeof(MyPagesCinema.MoviecastController), icon: "fa-users")]

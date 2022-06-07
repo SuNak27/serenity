@@ -25,8 +25,20 @@
           "PermissionKey": "Administration:General"
         },
         {
+          "Tablename": "moviecast",
+          "Identifier": "Moviecast",
+          "Module": "Cinema",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "moviegenres",
           "Identifier": "MovieGenres",
+          "Module": "Cinema",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "person",
+          "Identifier": "Person",
           "Module": "Cinema",
           "PermissionKey": "Administration:General"
         }

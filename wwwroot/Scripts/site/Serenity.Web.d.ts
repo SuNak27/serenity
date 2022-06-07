@@ -412,6 +412,12 @@ declare namespace Serenity.Cinema {
     }
 }
 declare namespace Serenity.Cinema {
+    enum Gender {
+        Male = 1,
+        Female = 2
+    }
+}
+declare namespace Serenity.Cinema {
     class GenreColumns {
         static columnsKey: string;
     }
@@ -558,6 +564,139 @@ declare namespace Serenity.Cinema {
             Delete = "Cinema/Movie/Delete",
             Retrieve = "Cinema/Movie/Retrieve",
             List = "Cinema/Movie/List"
+        }
+    }
+}
+declare namespace Serenity.Cinema {
+    class MoviecastColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Serenity.Cinema {
+    interface MoviecastForm {
+        MovieId: IntegerEditor;
+        PersonId: IntegerEditor;
+        Character: StringEditor;
+    }
+    class MoviecastForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Serenity.Cinema {
+    interface MoviecastRow {
+        MovieCastId?: number;
+        MovieId?: number;
+        PersonId?: number;
+        Character?: string;
+    }
+    namespace MoviecastRow {
+        const idProperty = "MovieCastId";
+        const nameProperty = "Character";
+        const localTextPrefix = "Cinema.Moviecast";
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            MovieCastId = "MovieCastId",
+            MovieId = "MovieId",
+            PersonId = "PersonId",
+            Character = "Character"
+        }
+    }
+}
+declare namespace Serenity.Cinema {
+    namespace MoviecastService {
+        const baseUrl = "Cinema/Moviecast";
+        function Create(request: Serenity.SaveRequest<MoviecastRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MoviecastRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MoviecastRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MoviecastRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Cinema/Moviecast/Create",
+            Update = "Cinema/Moviecast/Update",
+            Delete = "Cinema/Moviecast/Delete",
+            Retrieve = "Cinema/Moviecast/Retrieve",
+            List = "Cinema/Moviecast/List"
+        }
+    }
+}
+declare namespace Serenity.Cinema {
+    class PersonColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Serenity.Cinema {
+    interface PersonForm {
+        FirstName: StringEditor;
+        Lastname: StringEditor;
+        BirthDate: DateEditor;
+        BirthPlace: StringEditor;
+        Gender: EnumEditor;
+        Height: IntegerEditor;
+        PrimaryImage: StringEditor;
+        GalleryImages: StringEditor;
+    }
+    class PersonForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Serenity.Cinema {
+    interface PersonRow {
+        PersonId?: number;
+        FirstName?: string;
+        Lastname?: string;
+        Fullname?: string;
+        BirthDate?: string;
+        BirthPlace?: string;
+        Gender?: Gender;
+        Height?: number;
+        PrimaryImage?: string;
+        GalleryImages?: string;
+    }
+    namespace PersonRow {
+        const idProperty = "PersonId";
+        const nameProperty = "Fullname";
+        const localTextPrefix = "Cinema.Person";
+        const lookupKey = "Cinema.Person";
+        function getLookup(): Q.Lookup<PersonRow>;
+        const deletePermission = "Administration:General";
+        const insertPermission = "Administration:General";
+        const readPermission = "Administration:General";
+        const updatePermission = "Administration:General";
+        const enum Fields {
+            PersonId = "PersonId",
+            FirstName = "FirstName",
+            Lastname = "Lastname",
+            Fullname = "Fullname",
+            BirthDate = "BirthDate",
+            BirthPlace = "BirthPlace",
+            Gender = "Gender",
+            Height = "Height",
+            PrimaryImage = "PrimaryImage",
+            GalleryImages = "GalleryImages"
+        }
+    }
+}
+declare namespace Serenity.Cinema {
+    namespace PersonService {
+        const baseUrl = "Cinema/Person";
+        function Create(request: Serenity.SaveRequest<PersonRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<PersonRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PersonRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PersonRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Cinema/Person/Create",
+            Update = "Cinema/Person/Update",
+            Delete = "Cinema/Person/Delete",
+            Retrieve = "Cinema/Person/Retrieve",
+            List = "Cinema/Person/List"
         }
     }
 }
@@ -1074,6 +1213,54 @@ declare namespace Serenity.Cinema {
         constructor(container: JQuery);
         protected getQuickSearchFields(): Serenity.QuickSearchField[];
         protected getQuickFilters(): QuickFilter<Widget<any>, any>[];
+    }
+}
+declare namespace Serenity.Cinema {
+    class MoviecastDialog extends Serenity.EntityDialog<MoviecastRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: MoviecastForm;
+    }
+}
+declare namespace Serenity.Cinema {
+    class MoviecastGrid extends Serenity.EntityGrid<MoviecastRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MoviecastDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace Serenity.Cinema {
+    class PersonDialog extends Serenity.EntityDialog<PersonRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: PersonForm;
+    }
+}
+declare namespace Serenity.Cinema {
+    class PersonGrid extends Serenity.EntityGrid<PersonRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PersonDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace Serenity.LanguageList {
