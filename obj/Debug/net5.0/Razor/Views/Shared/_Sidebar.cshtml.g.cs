@@ -13,6 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 1 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Views\_ViewImports.cshtml"
+using Serenity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Views\_ViewImports.cshtml"
 using Serenity.Web;
 
@@ -21,20 +28,13 @@ using Serenity.Web;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Views\_ViewImports.cshtml"
-using Serenity;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Html;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3edb3b15a9b50ba97ecd338f073296a98e9d50c2", @"/Views/Shared/_Sidebar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c39f1a34f1ba1477465322aa2db4db59531070f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4af157c480883f1d60cdebdb3a1e400e4f2815a3", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Sidebar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Serenity.Navigation.INavigationModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("s-sidebar-header-logo"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);

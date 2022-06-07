@@ -13,6 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 1 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Views\_ViewImports.cshtml"
+using Serenity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Views\_ViewImports.cshtml"
 using Serenity.Web;
 
@@ -21,20 +28,13 @@ using Serenity.Web;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Views\_ViewImports.cshtml"
-using Serenity;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Html;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"22dbaaae808e01ada820ed29b99f8130741d2426", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5c39f1a34f1ba1477465322aa2db4db59531070f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4af157c480883f1d60cdebdb3a1e400e4f2815a3", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

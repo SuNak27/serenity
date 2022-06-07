@@ -13,6 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
+#line 1 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Modules\_ViewImports.cshtml"
+using Serenity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Modules\_ViewImports.cshtml"
 using Serenity.Web;
 
@@ -21,27 +28,20 @@ using Serenity.Web;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Modules\_ViewImports.cshtml"
-using Serenity;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 4 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Modules\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Html;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Modules\_ViewImports.cshtml"
+#line 4 "C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\Modules\_ViewImports.cshtml"
 using System.Text;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"70c56c280625b3366e279e7968eb54ee83b37ccd", @"/Modules/Administration/Role/RoleIndex.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e51a6726406726c4c80e74a4f172a74e8109eb85", @"/Modules/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"773d7d468fd42751f189ea46862044ea7f8b7490", @"/Modules/_ViewImports.cshtml")]
     public class Modules_Administration_Role_RoleIndex : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
