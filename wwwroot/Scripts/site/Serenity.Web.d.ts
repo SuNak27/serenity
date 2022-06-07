@@ -952,6 +952,7 @@ declare namespace Serenity.Cinema {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickSearchFields(): Serenity.QuickSearchField[];
     }
 }
 declare namespace Serenity.LanguageList {
