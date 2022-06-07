@@ -1,0 +1,51 @@
+{
+  "RootNamespace": "Serenity",
+  "ServerTypings": {
+    "LocalTexts": true
+  },
+  "Restore": {
+    "Exclude": [
+      "/wwwroot/Scripts/serenity/Serenity.CoreLib*.*"
+    ]
+  },
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "movie",
+          "Identifier": "Movie",
+          "Module": "Cinema",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    },
+    {
+      "Key": "MasterData",
+      "Tables": [
+        {
+          "Tablename": "kegiatan",
+          "Identifier": "Kegiatan",
+          "Module": "MasterData",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "pelanggaran",
+          "Identifier": "Pelanggaran",
+          "Module": "MasterData",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "siswa",
+          "Identifier": "Siswa",
+          "Module": "MasterData",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
+  "UpgradeInfo": {
+    "InitialType": "Community",
+    "InitialVersion": "5.2.4.0"
+  }
+}
