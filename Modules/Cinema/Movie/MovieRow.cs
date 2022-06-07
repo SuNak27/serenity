@@ -80,6 +80,13 @@ namespace Serenity.Cinema
             set => fields.GenreList[this] = value;
         }
 
+        [MasterDetailRelation(foreignKey: "MovieId", IncludeColumns = "PersonFullname")]
+        [DisplayName("Cast List"), NotMapped]
+        public List<MoviecastRow> CastList
+        {
+            get => fields.CastList[this];
+            set => fields.CastList[this] = value;
+        }
         public MovieRow()
             : base()
         {
@@ -101,6 +108,7 @@ namespace Serenity.Cinema
             public Int32Field Runtime;
             public Int32Field Kind;
             public ListField<Int32> GenreList;
+            public RowListField<MoviecastRow> CastList;
         }
     }
 }

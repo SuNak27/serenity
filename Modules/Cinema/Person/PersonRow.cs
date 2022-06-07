@@ -37,7 +37,7 @@ namespace Serenity.Cinema
         }
 
         [DisplayName("Full Name")]
-        [Expression("CONCAT(TO.[FirstName], CONCAT(' ', TO.[Lastname]))"), QuickSearch, NameProperty]
+        [Expression("CONCAT(T0.[FirstName], CONCAT(' ', T0.[Lastname]))"), QuickSearch, NameProperty]
         public String Fullname
         {
             get => fields.Fullname[this];

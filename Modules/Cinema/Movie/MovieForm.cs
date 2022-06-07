@@ -15,6 +15,8 @@ namespace Serenity.Cinema.Forms
         public string Title { get; set; }
         [TextAreaEditor(Rows = 3)]
         public string Description { get; set; }
+        [MoviecastEditor, IgnoreName]
+        public List<MoviecastRow> CastList { get; set; }
         [TextAreaEditor(Rows = 8)]
         public string Storyline { get; set; }
         public int Year { get; set; }

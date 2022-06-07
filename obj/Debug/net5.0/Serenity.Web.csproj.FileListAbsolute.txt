@@ -486,4 +486,3 @@ C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\obj\Debug\net5.0\
 C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\obj\Debug\net5.0\Razor\Modules\Cinema\Movie\MovieIndex.cshtml.g.cs
 C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\obj\Debug\net5.0\Razor\Modules\Cinema\Genre\GenreIndex.cshtml.g.cs
 C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\obj\Debug\net5.0\Razor\Modules\Cinema\Person\PersonIndex.cshtml.g.cs
-C:\Users\Alfad\OneDrive\Documents\Santri\Serenity\Serenity.Web\obj\Debug\net5.0\Razor\Modules\Cinema\Moviecast\MoviecastIndex.cshtml.g.cs

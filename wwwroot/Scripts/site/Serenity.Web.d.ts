@@ -479,6 +479,7 @@ declare namespace Serenity.Cinema {
     interface MovieForm {
         Title: StringEditor;
         Description: TextAreaEditor;
+        CastList: MoviecastEditor;
         Storyline: TextAreaEditor;
         Year: IntegerEditor;
         ReleaseDate: DateEditor;
@@ -528,6 +529,7 @@ declare namespace Serenity.Cinema {
         Runtime?: number;
         Kind?: CinemaKind;
         GenreList?: number[];
+        CastList?: MoviecastRow[];
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -546,7 +548,8 @@ declare namespace Serenity.Cinema {
             ReleaseDate = "ReleaseDate",
             Runtime = "Runtime",
             Kind = "Kind",
-            GenreList = "GenreList"
+            GenreList = "GenreList",
+            CastList = "CastList"
         }
     }
 }
@@ -574,8 +577,7 @@ declare namespace Serenity.Cinema {
 }
 declare namespace Serenity.Cinema {
     interface MoviecastForm {
-        MovieId: IntegerEditor;
-        PersonId: IntegerEditor;
+        PersonId: LookupEditor;
         Character: StringEditor;
     }
     class MoviecastForm extends Serenity.PrefixedContext {
@@ -590,6 +592,20 @@ declare namespace Serenity.Cinema {
         MovieId?: number;
         PersonId?: number;
         Character?: string;
+        MovieTitle?: string;
+        MovieDescription?: string;
+        MovieStoryline?: string;
+        MovieYear?: number;
+        MovieReleaseDate?: string;
+        MovieRuntime?: number;
+        MovieKind?: number;
+        PersonFirstName?: string;
+        PersonLastname?: string;
+        PersonFullname?: string;
+        PersonBirthDate?: string;
+        PersonBirthPlace?: string;
+        PersonGender?: number;
+        PersonHeight?: number;
     }
     namespace MoviecastRow {
         const idProperty = "MovieCastId";
@@ -603,7 +619,21 @@ declare namespace Serenity.Cinema {
             MovieCastId = "MovieCastId",
             MovieId = "MovieId",
             PersonId = "PersonId",
-            Character = "Character"
+            Character = "Character",
+            MovieTitle = "MovieTitle",
+            MovieDescription = "MovieDescription",
+            MovieStoryline = "MovieStoryline",
+            MovieYear = "MovieYear",
+            MovieReleaseDate = "MovieReleaseDate",
+            MovieRuntime = "MovieRuntime",
+            MovieKind = "MovieKind",
+            PersonFirstName = "PersonFirstName",
+            PersonLastname = "PersonLastname",
+            PersonFullname = "PersonFullname",
+            PersonBirthDate = "PersonBirthDate",
+            PersonBirthPlace = "PersonBirthPlace",
+            PersonGender = "PersonGender",
+            PersonHeight = "PersonHeight"
         }
     }
 }
@@ -1216,27 +1246,22 @@ declare namespace Serenity.Cinema {
     }
 }
 declare namespace Serenity.Cinema {
-    class MoviecastDialog extends Serenity.EntityDialog<MoviecastRow, any> {
+    class MoviecastEditDialog extends Serenity.Extensions.GridEditorDialog<MoviecastRow> {
         protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
-        protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
+        protected getLocalTextPrefix(): string;
         protected form: MoviecastForm;
+        constructor();
     }
 }
 declare namespace Serenity.Cinema {
-    class MoviecastGrid extends Serenity.EntityGrid<MoviecastRow, any> {
+    class MoviecastEditor extends Serenity.Extensions.GridEditorBase<MoviecastRow> {
         protected getColumnsKey(): string;
-        protected getDialogType(): typeof MoviecastDialog;
-        protected getIdProperty(): string;
-        protected getInsertPermission(): string;
+        protected getDialogType(): typeof MoviecastEditDialog;
         protected getLocalTextPrefix(): string;
-        protected getService(): string;
         constructor(container: JQuery);
+        protected getAddButtonCaption(): string;
+        protected validateEntity(row: MoviecastRow, id: number): boolean;
     }
 }
 declare namespace Serenity.Cinema {

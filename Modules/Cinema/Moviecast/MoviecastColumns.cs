@@ -12,11 +12,9 @@ namespace Serenity.Cinema.Columns
     [BasedOnRow(typeof(MoviecastRow), CheckNames = true)]
     public class MoviecastColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
-        public int MovieCastId { get; set; }
-        public int MovieId { get; set; }
-        public int PersonId { get; set; }
-        [EditLink]
-        public string Character { get; set; }
+        [EditLink, Width(220)]
+        public String PersonFullname { get; set; }
+        [EditLink, Width(150)]
+        public String Character { get; set; }
     }
 }

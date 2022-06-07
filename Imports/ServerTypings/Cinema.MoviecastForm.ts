@@ -1,7 +1,6 @@
 ﻿namespace Serenity.Cinema {
     export interface MoviecastForm {
-        MovieId: IntegerEditor;
-        PersonId: IntegerEditor;
+        PersonId: LookupEditor;
         Character: StringEditor;
     }
 
@@ -16,11 +15,10 @@
                 MoviecastForm.init = true;
 
                 var s = Serenity;
-                var w0 = IntegerEditor;
+                var w0 = LookupEditor;
                 var w1 = StringEditor;
 
                 Q.initFormType(MoviecastForm, [
-                    'MovieId', w0,
                     'PersonId', w0,
                     'Character', w1
                 ]);

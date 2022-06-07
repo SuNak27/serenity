@@ -12,7 +12,6 @@ namespace Serenity.Cinema.Forms
     [BasedOnRow(typeof(MoviecastRow), CheckNames = true)]
     public class MoviecastForm
     {
-        public int MovieId { get; set; }
         public int PersonId { get; set; }
         public string Character { get; set; }
     }

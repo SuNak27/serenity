@@ -4,6 +4,20 @@
         MovieId?: number;
         PersonId?: number;
         Character?: string;
+        MovieTitle?: string;
+        MovieDescription?: string;
+        MovieStoryline?: string;
+        MovieYear?: number;
+        MovieReleaseDate?: string;
+        MovieRuntime?: number;
+        MovieKind?: number;
+        PersonFirstName?: string;
+        PersonLastname?: string;
+        PersonFullname?: string;
+        PersonBirthDate?: string;
+        PersonBirthPlace?: string;
+        PersonGender?: number;
+        PersonHeight?: number;
     }
 
     export namespace MoviecastRow {
@@ -19,7 +33,21 @@
             MovieCastId = "MovieCastId",
             MovieId = "MovieId",
             PersonId = "PersonId",
-            Character = "Character"
+            Character = "Character",
+            MovieTitle = "MovieTitle",
+            MovieDescription = "MovieDescription",
+            MovieStoryline = "MovieStoryline",
+            MovieYear = "MovieYear",
+            MovieReleaseDate = "MovieReleaseDate",
+            MovieRuntime = "MovieRuntime",
+            MovieKind = "MovieKind",
+            PersonFirstName = "PersonFirstName",
+            PersonLastname = "PersonLastname",
+            PersonFullname = "PersonFullname",
+            PersonBirthDate = "PersonBirthDate",
+            PersonBirthPlace = "PersonBirthPlace",
+            PersonGender = "PersonGender",
+            PersonHeight = "PersonHeight"
         }
     }
 }
