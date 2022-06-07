@@ -677,6 +677,11 @@ declare namespace Serenity.Cinema {
     }
 }
 declare namespace Serenity.Cinema {
+    class PersonMovieColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Serenity.Cinema {
     interface PersonRow {
         PersonId?: number;
         FirstName?: string;
@@ -1246,15 +1251,6 @@ declare namespace Serenity.Cinema {
     }
 }
 declare namespace Serenity.Cinema {
-    class MoviecastEditDialog extends Serenity.Extensions.GridEditorDialog<MoviecastRow> {
-        protected getFormKey(): string;
-        protected getNameProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected form: MoviecastForm;
-        constructor();
-    }
-}
-declare namespace Serenity.Cinema {
     class MoviecastEditor extends Serenity.Extensions.GridEditorBase<MoviecastRow> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof MoviecastEditDialog;
@@ -1265,16 +1261,26 @@ declare namespace Serenity.Cinema {
     }
 }
 declare namespace Serenity.Cinema {
+    class MoviecastEditDialog extends Serenity.Extensions.GridEditorDialog<MoviecastRow> {
+        protected getFormKey(): string;
+        protected getNameProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected form: MoviecastForm;
+        constructor();
+    }
+}
+declare namespace Serenity.Cinema {
     class PersonDialog extends Serenity.EntityDialog<PersonRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
-        protected getDeletePermission(): string;
-        protected getInsertPermission(): string;
-        protected getUpdatePermission(): string;
         protected form: PersonForm;
+        private moviesGrid;
+        constructor();
+        protected getTemplate(): string;
+        protected afterLoadEntity(): void;
     }
 }
 declare namespace Serenity.Cinema {
@@ -1286,6 +1292,22 @@ declare namespace Serenity.Cinema {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace Serenity.Cinema {
+    class PersonMovieGrid extends Serenity.EntityGrid<MoviecastRow, any> {
+        protected getColumnsKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): any;
+        protected getInitialTitle(): any;
+        protected usePager(): boolean;
+        protected getGridCanLoad(): boolean;
+        private _personID;
+        get personID(): number;
+        set personID(value: number);
     }
 }
 declare namespace Serenity.LanguageList {
