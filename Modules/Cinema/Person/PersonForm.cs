@@ -14,11 +14,11 @@ namespace Serenity.Cinema.Forms
     {
         public string FirstName { get; set; }
         public string Lastname { get; set; }
+        public string PrimaryImage { get; set; }
+        public string GalleryImages { get; set; }
         public DateTime BirthDate { get; set; }
         public string BirthPlace { get; set; }
         public int Gender { get; set; }
         public int Height { get; set; }
-        public string PrimaryImage { get; set; }
-        public string GalleryImages { get; set; }
     }
 }

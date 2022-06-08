@@ -52,10 +52,10 @@ namespace Serenity
                 typeof(Startup).Assembly,
                 typeof(Serenity.Extensions.EnvironmentSettings).Assembly,
                 //<if:Northwind>
-                typeof(Serenity.Demo.Northwind.CustomerController).Assembly,
+                // typeof(Serenity.Demo.Northwind.CustomerController).Assembly,
                 //</if:Northwind>
                 //<if:BasicSamples>
-                typeof(Serenity.Demo.BasicSamples.BasicSamplesController).Assembly,
+                // typeof(Serenity.Demo.BasicSamples.BasicSamplesController).Assembly,
                 //</if:BasicSamples>
             }));
 
@@ -96,7 +96,7 @@ namespace Serenity
 
             var builder = services.AddControllersWithViews(options =>
             {
-                options.Filters.Add(typeof(AutoValidateAntiforgeryTokenAttribute));
+                // options.Filters.Add(typeof(AutoValidateAntiforgeryTokenAttribute));
                 options.Filters.Add(typeof(AntiforgeryCookieResultFilterAttribute));
                 options.ModelBinderProviders.Insert(0, new ServiceEndpointModelBinderProvider());
                 options.Conventions.Add(new ServiceEndpointActionModelConvention());

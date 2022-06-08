@@ -1,4 +1,5 @@
-﻿using Serenity;
+﻿using System.Text;
+using Serenity;
 using Serenity.ComponentModel;
 using Serenity.Data;
 using System;
@@ -17,6 +18,8 @@ namespace Serenity.Cinema.Forms
         public string Description { get; set; }
         [MoviecastEditor, IgnoreName]
         public List<MoviecastRow> CastList { get; set; }
+        public String PrimaryImage { get; set; }
+        public String GalleryImages { get; set; }
         [TextAreaEditor(Rows = 8)]
         public string Storyline { get; set; }
         public int Year { get; set; }

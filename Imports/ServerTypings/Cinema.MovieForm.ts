@@ -3,6 +3,8 @@
         Title: StringEditor;
         Description: TextAreaEditor;
         CastList: MoviecastEditor;
+        PrimaryImage: ImageUploadEditor;
+        GalleryImages: MultipleImageUploadEditor;
         Storyline: TextAreaEditor;
         Year: IntegerEditor;
         ReleaseDate: DateEditor;
@@ -25,21 +27,25 @@
                 var w0 = StringEditor;
                 var w1 = TextAreaEditor;
                 var w2 = MoviecastEditor;
-                var w3 = IntegerEditor;
-                var w4 = DateEditor;
-                var w5 = EnumEditor;
-                var w6 = LookupEditor;
+                var w3 = ImageUploadEditor;
+                var w4 = MultipleImageUploadEditor;
+                var w5 = IntegerEditor;
+                var w6 = DateEditor;
+                var w7 = EnumEditor;
+                var w8 = LookupEditor;
 
                 Q.initFormType(MovieForm, [
                     'Title', w0,
                     'Description', w1,
                     'CastList', w2,
+                    'PrimaryImage', w3,
+                    'GalleryImages', w4,
                     'Storyline', w1,
-                    'Year', w3,
-                    'ReleaseDate', w4,
-                    'Kind', w5,
-                    'Runtime', w3,
-                    'GenreList', w6
+                    'Year', w5,
+                    'ReleaseDate', w6,
+                    'Kind', w7,
+                    'Runtime', w5,
+                    'GenreList', w8
                 ]);
             }
         }

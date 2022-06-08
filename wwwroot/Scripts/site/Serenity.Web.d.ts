@@ -480,6 +480,8 @@ declare namespace Serenity.Cinema {
         Title: StringEditor;
         Description: TextAreaEditor;
         CastList: MoviecastEditor;
+        PrimaryImage: ImageUploadEditor;
+        GalleryImages: MultipleImageUploadEditor;
         Storyline: TextAreaEditor;
         Year: IntegerEditor;
         ReleaseDate: DateEditor;
@@ -530,6 +532,8 @@ declare namespace Serenity.Cinema {
         Kind?: CinemaKind;
         GenreList?: number[];
         CastList?: MoviecastRow[];
+        PrimaryImage?: string;
+        GalleryImages?: string;
     }
     namespace MovieRow {
         const idProperty = "MovieId";
@@ -549,7 +553,9 @@ declare namespace Serenity.Cinema {
             Runtime = "Runtime",
             Kind = "Kind",
             GenreList = "GenreList",
-            CastList = "CastList"
+            CastList = "CastList",
+            PrimaryImage = "PrimaryImage",
+            GalleryImages = "GalleryImages"
         }
     }
 }
@@ -663,12 +669,12 @@ declare namespace Serenity.Cinema {
     interface PersonForm {
         FirstName: StringEditor;
         Lastname: StringEditor;
+        PrimaryImage: ImageUploadEditor;
+        GalleryImages: MultipleImageUploadEditor;
         BirthDate: DateEditor;
         BirthPlace: StringEditor;
         Gender: EnumEditor;
         Height: IntegerEditor;
-        PrimaryImage: StringEditor;
-        GalleryImages: StringEditor;
     }
     class PersonForm extends Serenity.PrefixedContext {
         static formKey: string;

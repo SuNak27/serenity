@@ -87,6 +87,23 @@ namespace Serenity.Cinema
             get => fields.CastList[this];
             set => fields.CastList[this] = value;
         }
+        
+        [DisplayName("Primary Image"), Size(100),
+        ImageUploadEditor(FilenameFormat = "Movie/PrimaryImage/~")]
+        public string PrimaryImage
+        {
+            get => fields.PrimaryImage[this];
+            set => fields.PrimaryImage[this] = value;
+        }
+
+        [DisplayName("Gallery Images"),
+         MultipleImageUploadEditor(FilenameFormat = "Movie/GalleryImages/~")]
+        public string GalleryImages
+        {
+            get => fields.GalleryImages[this];
+            set => fields.GalleryImages[this] = value;
+        }
+
         public MovieRow()
             : base()
         {
@@ -109,6 +126,8 @@ namespace Serenity.Cinema
             public Int32Field Kind;
             public ListField<Int32> GenreList;
             public RowListField<MoviecastRow> CastList;
+            public StringField PrimaryImage;
+            public StringField GalleryImages;
         }
     }
 }

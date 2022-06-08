@@ -5,6 +5,7 @@ using Serenity.Data.Mapping;
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Serenity.Cinema
 {
@@ -71,15 +72,17 @@ namespace Serenity.Cinema
             get => fields.Height[this];
             set => fields.Height[this] = value;
         }
-
-        [DisplayName("Primary Image"), Size(100)]
+        
+        [DisplayName("Primary Image"), Size(100),
+        ImageUploadEditor(FilenameFormat = "Person/PrimaryImage/~")]
         public string PrimaryImage
         {
             get => fields.PrimaryImage[this];
             set => fields.PrimaryImage[this] = value;
         }
 
-        [DisplayName("Gallery Images"), Size(200)]
+        [DisplayName("Gallery Images"),
+         MultipleImageUploadEditor(FilenameFormat = "Person/GalleryImages/~")]
         public string GalleryImages
         {
             get => fields.GalleryImages[this];

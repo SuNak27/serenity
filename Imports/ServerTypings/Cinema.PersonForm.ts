@@ -2,12 +2,12 @@
     export interface PersonForm {
         FirstName: StringEditor;
         Lastname: StringEditor;
+        PrimaryImage: ImageUploadEditor;
+        GalleryImages: MultipleImageUploadEditor;
         BirthDate: DateEditor;
         BirthPlace: StringEditor;
         Gender: EnumEditor;
         Height: IntegerEditor;
-        PrimaryImage: StringEditor;
-        GalleryImages: StringEditor;
     }
 
     export class PersonForm extends Serenity.PrefixedContext {
@@ -22,19 +22,21 @@
 
                 var s = Serenity;
                 var w0 = StringEditor;
-                var w1 = DateEditor;
-                var w2 = EnumEditor;
-                var w3 = IntegerEditor;
+                var w1 = ImageUploadEditor;
+                var w2 = MultipleImageUploadEditor;
+                var w3 = DateEditor;
+                var w4 = EnumEditor;
+                var w5 = IntegerEditor;
 
                 Q.initFormType(PersonForm, [
                     'FirstName', w0,
                     'Lastname', w0,
-                    'BirthDate', w1,
+                    'PrimaryImage', w1,
+                    'GalleryImages', w2,
+                    'BirthDate', w3,
                     'BirthPlace', w0,
-                    'Gender', w2,
-                    'Height', w3,
-                    'PrimaryImage', w0,
-                    'GalleryImages', w0
+                    'Gender', w4,
+                    'Height', w5
                 ]);
             }
         }
